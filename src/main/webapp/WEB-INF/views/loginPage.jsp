@@ -6,8 +6,10 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login</title>
+<meta charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Welcome to contacts organizer</title>
 
 <link href="<c:url value="/resources/css/global.css" />" rel="stylesheet"
 	type="text/css">
@@ -26,9 +28,9 @@
 		<form name='f' action="<c:url value='j_spring_security_check' />"
 			method="post">
 			<input type="text" name="j_username" placeholder="username"
-				onfocus="this.placeholder=''" onblur="this.placeholder='username'">
+				onfocus="this.placeholder=''" onblur="this.placeholder='username'" required>
 			<input type="password" name="j_password" placeholder="password"
-				onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+				onfocus="this.placeholder=''" onblur="this.placeholder='password'" required>
 
 			<input name="submit" type="submit" value="Login">
 		</form>
