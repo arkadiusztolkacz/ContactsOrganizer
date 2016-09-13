@@ -71,9 +71,14 @@ input[type=submit]:focus {
 
 @media screen and (min-width: 750px){
 header {
-	max-width: 
-
-	}
+	max-width: 65%;
+}
+main {
+	max-width: 50%;
+}
+input {
+	width: 300px;
+}
 }
 
 span#error {
