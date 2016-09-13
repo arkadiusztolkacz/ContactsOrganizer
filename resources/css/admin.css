@@ -1,0 +1,21 @@
+#container{
+	background-image: url("img/footer_lodyas.png");
+	width:50%;
+	min-width: 50%;
+	height: 500px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px;
+	text-align: center;
+}
+table{
+	padding: 10px;
+}
+
+#tableDiv{
+	border: 2px solid black;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
