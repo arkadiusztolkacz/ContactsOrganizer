@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<meta charset=UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Welcome to contacts organizer</title>
@@ -20,11 +20,11 @@
 </style>
 </head>
 <body>
-	<div id="header">
+	<header>
 		Welcome! <br /> Please login with Username and Password
-	</div>
+	</header>
 
-	<div id="container">
+	<main>
 		<form name='f' action="<c:url value='j_spring_security_check' />"
 			method="post">
 			<input type="text" name="j_username" placeholder="username"
@@ -35,11 +35,11 @@
 			<input name="submit" type="submit" value="Login">
 		</form>
 
-		<div id="error">
+		<span id="error">
 			<c:if test="${error eq true}">
 		Your username or password was incorrect
 			</c:if>
-		</div>
-	</div>
+		</span>
+	</main>
 </body>
 </html>

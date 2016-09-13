@@ -4,6 +4,10 @@ body {
 	font-size: 1.25em;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 a {
 	height: 100%;
 	text-decoration: none;

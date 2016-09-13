@@ -1,40 +1,43 @@
-#header {
+header, main, input, #error {
+	margin: auto;
+	display: block;
+}
+
+header {
 	background-image: url("img/footer_lodyas.png");
-	width: 50%;
+	max-width: 100%;
 	padding: 50px;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 50px;
-	font-size: 25px;
+	font-size: 1.5625em;
 	letter-spacing: 3px;
 	text-align: center;
 	font-weight: bold;
 	text-shadow: 2px 2px rgba(55, 55, 55, 0.9);
-	border-radius: 2px;
+	border-radius: 5px;
 	box-shadow: 3px 3px 30px 5px rgba(55, 55, 55, 0.9);
 }
 
-#container {
+main {
 	background-image: url("img/footer_lodyas.png");
-	width: 300px;
+	max-width: 100%;
 	min-height: 260px;
-	padding: 50px;
-	margin-left: auto;
-	margin-right: auto;
+	padding: 50px 10px;
 	margin-top: 50px;
-	border-radius: 2px;
+	border-radius: 5px;
 	box-shadow: 3px 3px 30px 5px rgba(55, 55, 55, 0.9);
 }
 
-input[type=text], input[type=password] {
-	width: 300px;
+input {
+	width: 250px;
+}
+
+input[type=text], input[type=password] {	
 	background-color: #efefef;
 	color: #666;
 	border: 2px solid #ddd;
-	border-radius: 5px;
+	border-radius: 8px;
 	font-size: 20px;
 	padding: 10px;
-	box-sizing: border-box;
 	margin-top: 10px;
 }
 
@@ -46,9 +49,8 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 input[type=submit] {
-	width: 300px;
 	background-color: #36b03c;
-	font-size: 20px;
+	font-size: inherit;
 	color: white;
 	padding: 15px 10px;
 	margin-top: 20px;
@@ -67,8 +69,15 @@ input[type=submit]:focus {
 	box-shadow: 0px 0px 15px 5px rgba(204, 204, 204, 0.9);
 }
 
-#error {
+@media screen and (min-width: 750px){
+header {
+	max-width: 
+
+	}
+}
+
+span#error {
 	margin-top: 10px;
 	color: #FF4500;
-	text-align: justify;
+	text-align: center;
 }
