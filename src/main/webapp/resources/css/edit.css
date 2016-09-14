@@ -85,9 +85,18 @@ nav ul li:hover {
 	cursor: pointer;
 }
 
+section.tabContent {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+section.tabContent h1 {
+	color: #000;
+}
+
 #contact {
 	background-image: url("img/footer_lodyas.png");
-	width: 700px;
 	padding: 50px;
 	font-size: 16px;
 	margin-left: auto;

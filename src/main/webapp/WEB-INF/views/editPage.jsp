@@ -61,6 +61,7 @@
 		</ul>
 	</nav>
 	<div class="clearfix"></div>
+	<section id="contactForm" class="tabContent">
 	<div id="contact">
 		<form action="/contactsOrganizer/main/edit/update" method="post">
 			<input type="hidden" name="id" value="${contact.id}">
@@ -104,10 +105,17 @@
 
 		</form>
 
+		
+	</div>
+	</section>
+	<section id="contactPic" class="tabContent">
+		<h1>Under construction</h1>
+	</section>
+	<section id="contactDelete" class="tabContent">
 		<form action="/contactsOrganizer/main/edit/delete" method="post">
 			<input type="hidden" name="id" value="${contact.id}"> <input
 				type="submit" value="Delete contact">
 		</form>
-	</div>
+	</section>
 </body>
 </html>
