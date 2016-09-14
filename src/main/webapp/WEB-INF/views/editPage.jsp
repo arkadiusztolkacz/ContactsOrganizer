@@ -55,67 +55,75 @@
 	<div class="clearfix"></div>
 	<nav>
 		<ul>
-			<li>Update contact's info</li>
-			<li>Update profile pic</li>
-			<li>Delete contact</li>
+			<li class="tabLinks active"
+				onclick="openOption(event, 'contactForm')">Update contact's
+				info</li>
+			<li class="tabLinks" onclick="openOption(event, 'contactPic')">Update
+				profile pic</li>
+			<li class="tabLinks" onclick="openOption(event, 'contactDelete')">Delete
+				contact</li>
 		</ul>
 	</nav>
 	<div class="clearfix"></div>
 	<section id="contactForm" class="tabContent">
-	<div id="contact">
-		<form action="/contactsOrganizer/main/edit/update" method="post">
-			<input type="hidden" name="id" value="${contact.id}">
-			<table>
-				<tr>
-					<td>Contact's Name:</td>
-					<td><input type="text" name="name" value="${contact.name}"
-						placeholder="${originalContact.name}"></td>
-					<td class="errors"><form:errors path="contact.name" /></td>
+		<h1>Under construction</h1>
+		<div id="contact">
+			<form action="/contactsOrganizer/main/edit/update" method="post">
+				<input type="hidden" name="id" value="${contact.id}">
+				<table>
+					<tr>
+						<td>Contact's Name:</td>
+						<td><input type="text" name="name" value="${contact.name}"
+							placeholder="${originalContact.name}"></td>
+						<td class="errors"><form:errors path="contact.name" /></td>
 
-				</tr>
-				<tr>
-					<td>Contact's Surname:</td>
-					<td><input type="text" name="surname"
-						value="${contact.surname}"
-						placeholder="${originalContact.surname}"></td>
-					<td class="errors"><form:errors path="contact.surname" /></td>
-				</tr>
-				<tr>
-					<td>Contact's Company:</td>
-					<td><input type="text" name="company"
-						value="${contact.company}"
-						placeholder="${originalContact.company}"></td>
-					<td class="errors"><form:errors path="contact.company" /></td>
-				</tr>
-				<tr>
-					<td>Contact's E-mail:</td>
-					<td><input type="text" name="email" value="${contact.email}"
-						placeholder="${originalContact.email}"></td>
-					<td class="errors"><form:errors path="contact.email" /></td>
-				</tr>
-				<tr>
-					<td>Contact's Phone:</td>
-					<td><input type="text" name="phone" value="${contact.phone}"
-						placeholder="${originalContact.phone}"></td>
-					<td class="errors"><form:errors path="contact.phone" /></td>
-				</tr>
-			</table>
+					</tr>
+					<tr>
+						<td>Contact's Surname:</td>
+						<td><input type="text" name="surname"
+							value="${contact.surname}"
+							placeholder="${originalContact.surname}"></td>
+						<td class="errors"><form:errors path="contact.surname" /></td>
+					</tr>
+					<tr>
+						<td>Contact's Company:</td>
+						<td><input type="text" name="company"
+							value="${contact.company}"
+							placeholder="${originalContact.company}"></td>
+						<td class="errors"><form:errors path="contact.company" /></td>
+					</tr>
+					<tr>
+						<td>Contact's E-mail:</td>
+						<td><input type="text" name="email" value="${contact.email}"
+							placeholder="${originalContact.email}"></td>
+						<td class="errors"><form:errors path="contact.email" /></td>
+					</tr>
+					<tr>
+						<td>Contact's Phone:</td>
+						<td><input type="text" name="phone" value="${contact.phone}"
+							placeholder="${originalContact.phone}"></td>
+						<td class="errors"><form:errors path="contact.phone" /></td>
+					</tr>
+				</table>
 
-			<input type="submit" value="Submit changes">
+				<input type="submit" value="Submit changes">
 
-		</form>
+			</form>
 
-		
-	</div>
+
+		</div>
 	</section>
 	<section id="contactPic" class="tabContent">
 		<h1>Under construction</h1>
 	</section>
 	<section id="contactDelete" class="tabContent">
+		<h1>Under construction</h1>
 		<form action="/contactsOrganizer/main/edit/delete" method="post">
 			<input type="hidden" name="id" value="${contact.id}"> <input
 				type="submit" value="Delete contact">
 		</form>
 	</section>
+	<script src=<c:url value="/resources/js/detailsOption.js" />></script>
+
 </body>
 </html>
