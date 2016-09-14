@@ -91,7 +91,9 @@
 	<input type="text" id="companyInput" onkeyup="filterCompanies()"
 		class="searchInput" placeholder="Search for companies..."
 		title="Type in a company">
-
+	
+	<span id="tooltip">Click profile picture to go to profile's details.</span>
+	
 	<table id="contacts">
 		<tr>
 			<th>Name</th>

@@ -10,6 +10,7 @@ header {
 	border-radius: 2px;
 	background-color: #222;
 	text-align: center;
+	z-index: 5;
 }
 
 header ul {
@@ -34,7 +35,7 @@ header ul li a:hover {
 div#modalBox {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 10;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -128,12 +129,38 @@ input[type=submit]:focus {
 }
 
 main {
+	position: relative;
 	min-height: 500px;
 	max-width: 100%;
 	margin-top: 10px;
 	padding: 20px;
 	border-radius: 2px;
 	overflow: auto;
+}
+
+span#tooltip {
+	width: 220px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+span#tooltip::after {
+	content: "";
+    position: absolute;
+    top: 100%;
+    right: 20%;
+    border-style: solid;
+    border-width: 8px;
+    border-color: #555 transparent transparent transparent;
 }
 
 input.searchInput {
@@ -233,6 +260,11 @@ table#contacts tr:hover {background-color: #ddd;}
 	height: 150px;
 	padding-top: 100px;
 	}
+	
+	main:hover span#tooltip {
+    visibility: visible;
+    opacity: 1;
+}
 	
 	input.searchInput {
 	width: 50%;
