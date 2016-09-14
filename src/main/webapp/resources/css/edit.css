@@ -1,40 +1,88 @@
-#container {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
+header {
+	max-width: 100%;
+	font-size: 1.5em;
+	font-weight: bold;
+	border-radius: 2px;
+	background-color: #222;
 	text-align: center;
 }
 
-#header {
-	min-width: 100%;
-	font-size: 35px;
-	font-weight: bold;
-	border-radius: 2px;
+header ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
-#label {
-	background: #128870;
+header ul li {
+	max-width: 100%;
+}
+
+header ul li:first-child, header ul li a {
+	padding: 10px 16px;
+}
+
+header ul li a:hover {
+	background-color: #111;
+}
+
+figure {
+	max-width: 100%;
+	text-align: center;
+	color: #000;
+}
+
+figure div#profilePic {
+	width: 150px;
+	height: 150px;
+	margin: auto;
+	background: url("img/profile_default.png") no-repeat center;
+	background-size: contain;
+}
+
+section.contactInfo {
+	width: 50%;
 	float: left;
-	min-width: 49%;
-	height: 100%;
-	border-right: 2px dotted #000;
+	border-radius: 5px;
 }
 
-#back {
-	background: #128870;
-	float: left;
-	min-width: 50%;
-	height: 100%;
+section.contactInfo ul, nav ul {
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color: #4CAF50;
+	padding: 20px 0px;
+	text-align: center;
+	color: #FFF;
 }
 
-#back:HOVER {
-	background: #006650;;
+section.contactInfo ul li {
+	max-width: 100%;
 }
 
-.vertical {
-	display: block;
-	padding-top: 20px;
-	padding-bottom: 20px;
+section#labels ul {
+	border-right: 2px dotted #DDD;
+}
+
+section#details ul li:hover, nav ul li:hover {
+	background-color: #2A8D30;
+}
+
+div.clearfix {
+	clear: both;
+}
+
+nav {
+	margin-top: 2px;
+}
+
+nav ul li {
+	line-height: 150%;
+}
+
+nav ul li:hover {
+	background-color: #2A8D30;
+	cursor: pointer;
 }
 
 #contact {
@@ -99,4 +147,50 @@ td {
 
 .errors {
 	color: #FF4500;
+}
+
+@media screen and (min-width: 750px){
+	header ul li {
+	display: inline-block;
+	width: 50%;
+	min-height: 100px;
+	float:left;
+	}
+	
+	header ul li a {
+	height: 100px;
+	}
+	
+	figure {
+	max-width: 50%;
+	float: right;
+	margin-top: 15px;
+	}
+	
+	figure div#profilePic {
+	width: 200px;
+	height: 200px;
+	}
+	
+	section.contactInfo {
+	width: 25%;
+	margin-top: 15px;
+	line-height: 150%;
+	}
+	
+	nav {
+	width: 80%;
+	float:right;
+	}
+	nav ul {
+	padding: 0px;
+	}
+	
+	nav ul li {
+	display: inline;
+	width: 33.33%;
+	line-height: 250%;
+	float:left;
+	}
+
 }

@@ -71,6 +71,7 @@ public class HomeController {
 		Contact contact = cService.getContact(id);
 		model = new ModelAndView("editPage");
 		model.addObject("contact", contact);
+		model.addObject("originalContact", contact);
 
 		return model;
 	}
