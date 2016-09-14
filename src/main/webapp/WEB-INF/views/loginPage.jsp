@@ -11,8 +11,8 @@
 
 <title>Welcome to contacts organizer</title>
 
-<link href="<c:url value="/resources/css/global.css" />" rel="stylesheet"
-	type="text/css">
+<link href="<c:url value="/resources/css/global.css" />"
+	rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/login.css" />" rel="stylesheet"
 	type="text/css">
 
@@ -25,21 +25,20 @@
 	</header>
 
 	<main>
-		<form name='f' action="<c:url value='j_spring_security_check' />"
-			method="post">
-			<input type="text" name="j_username" placeholder="username"
-				onfocus="this.placeholder=''" onblur="this.placeholder='username'" required>
-			<input type="password" name="j_password" placeholder="password"
-				onfocus="this.placeholder=''" onblur="this.placeholder='password'" required>
+	<form name='f' action="<c:url value='j_spring_security_check' />"
+		method="post">
+		<input type="text" name="j_username" placeholder="username"
+			onfocus="this.placeholder=''" onblur="this.placeholder='username'"
+			required autofocus>
+			 <input type="password" name="j_password"
+			placeholder="password" onfocus="this.placeholder=''"
+			onblur="this.placeholder='password'" required> <input
+			name="submit" type="submit" value="Login">
+	</form>
 
-			<input name="submit" type="submit" value="Login">
-		</form>
-
-		<span id="error">
-			<c:if test="${error eq true}">
+	<span id="error"> <c:if test="${error eq true}">
 		Your username or password was incorrect
 			</c:if>
-		</span>
-	</main>
+	</span> </main>
 </body>
 </html>

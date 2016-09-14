@@ -26,7 +26,7 @@
 			<li><a href="#" id="toggle">Add a new contact</a></li>
 			<c:choose>
 				<c:when test="${isUserAdmin eq true}">
-					<li><a href="/contactsOrganizer/main/admin">Go to admin
+					<li><a href="/contactsOrganizer/main/admin">Admin
 							page:</a></li>
 				</c:when>
 			</c:choose>
@@ -41,7 +41,7 @@
 			</c:choose>>
 		<div id="contactForm">
 			<span id="closeForm">×</span>
-			<h2>Contacts:</h2>
+			<h2>New contact</h2>
 			<form:errors path="contact.*" class="error" />
 
 			<form action="/contactsOrganizer/main/submitNewContact" method="post">
@@ -97,7 +97,7 @@
 			<th>Name</th>
 			<th>Company</th>
 			<th>Phone number</th>
-			<th>Edit</th>
+			<th>Details</th>
 		</tr>
 		<c:forEach items="${list}" var="oneContact">
 			<tr>
@@ -105,7 +105,7 @@
 				<td>${oneContact.company}</td>
 				<td>${oneContact.phone}</td>
 				<td class="editCell"><a
-					href="/contactsOrganizer/main/edit/${oneContact.id}">Edit</a></td>
+					href="/contactsOrganizer/main/edit/${oneContact.id}">.</a></td>
 			</tr>
 
 		</c:forEach>

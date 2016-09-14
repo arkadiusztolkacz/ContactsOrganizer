@@ -10,8 +10,8 @@ function filterCompanies() {
 
 function filterTable(cell, input) {
 	var filter = input.value.toUpperCase();
-	table = document.getElementById("contacts");
-	tr = table.getElementsByTagName("tr");
+	var table = document.getElementById("contacts");
+	var tr = table.getElementsByTagName("tr");
 	for (i = 0; i < tr.length; i++) {
 		td = tr[i].getElementsByTagName("td")[cell];
 		if (td) {

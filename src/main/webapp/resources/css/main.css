@@ -1,3 +1,7 @@
+body {
+	margin: 0;
+}
+
 header {
 	min-width: 100%;
 	font-size: 1.5em;
@@ -43,7 +47,7 @@ div#modalBox {
 div#contactForm {
 	position: relative;
 	max-width: 100%;
-	padding: 10px;
+	padding: 10px 10px 30px 10px;
 	background-image: url("img/footer_lodyas.png");
 	letter-spacing: 3px;
 	text-align: left;
@@ -58,16 +62,17 @@ div#contactForm {
 @-webkit-keyframes animatetop {
 	from {top: -300px; opacity: 0}
 	to {top: 0;	opacity: 1}
-
 }
+
 @keyframes animatetop {
 	from {top: -300px; opacity: 0}
 	to {top: 0;	opacity: 1}
 }
+
 span#closeForm {
 	color: white;
 	float: right;
-	font-size: 28px;
+	font-size: 1.75em;
 	font-weight: bold;
 }
 
@@ -119,8 +124,7 @@ input[type=submit]:focus {
 	color: #000;
 	font-size: 60px;
 	text-align: center;
-	height: 70px;
-	min-height: 70px;
+	height: 50px;
 }
 
 main {
@@ -129,10 +133,15 @@ main {
 	margin-top: 10px;
 	padding: 20px;
 	border-radius: 2px;
-	margin-top: 10px;
 	overflow: auto;
 }
+
 input.searchInput {
+	background-image: url("img/search_icon.png");
+    background-position: 5px 8px;
+    background-size: 30px auto;
+    background-repeat: no-repeat;
+    padding-left: 35px;
 	width: 100%;
 	color: #000;
 	border: 1px solid #000;
@@ -159,22 +168,26 @@ table#contacts td, table#contacts th {
 
 table#contacts tr:nth-child(even){background-color: #f2f2f2;}
 
+table#contacts tr td a {
+	display: inline-block;
+	width: 100%;
+	color: transparent;
+	background: url("img/profile_default.png") no-repeat center;
+	background-size: contain;
+}
+
+table#contacts tr td a:hover {
+	background: url("img/profile_default_hover.png") no-repeat center;
+	background-size: contain;
+}
+
 table#contacts th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+	padding: 12px 0px;
     background-color: #4CAF50;
-    color: white;
+    color: #FFF;
 }
 
 table#contacts tr:hover {background-color: #ddd;}
-
-table#contacts a {
-	color: #000;
-}
-
-table#contacts a:HOVER {
-	background: #22380D;
-}
 
 .error, .errors {
 	color: #FF4500;
@@ -201,6 +214,10 @@ table#contacts a:HOVER {
 		margin: auto;
 	}
 	
+	header {
+	position: fixed;
+	}
+	
 	header ul li {
 	display: inline-block;
 	width: 25%;
@@ -212,8 +229,12 @@ table#contacts a:HOVER {
 	height: 100px;
 	}
 	
+	div#clockPanel {
+	height: 150px;
+	padding-top: 100px;
+	}
+	
 	input.searchInput {
 	width: 50%;
-}
-	
+	}	
 }
