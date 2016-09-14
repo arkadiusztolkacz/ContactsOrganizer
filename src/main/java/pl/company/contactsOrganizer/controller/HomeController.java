@@ -31,7 +31,6 @@ public class HomeController {
 	public ModelAndView submitNew(@Valid @ModelAttribute("contact") Contact contact, BindingResult result) {
 
 		ModelAndView model;
-
 		if (!result.hasErrors()) {
 			cService.addNewContact(contact);
 			model = new ModelAndView("redirect:/main");
@@ -39,6 +38,7 @@ public class HomeController {
 			model = new ModelAndView("mainPage");
 			List<Contact> contactsList = cService.findCurrentContacts();
 			model.addObject("list", contactsList);
+			model.addObject("Visible", true);
 			if (uService.isUserAdmin()) {
 				model.addObject("isUserAdmin", true);
 			}

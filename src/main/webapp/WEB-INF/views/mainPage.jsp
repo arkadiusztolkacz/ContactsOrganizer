@@ -8,7 +8,8 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
 
 <link href="<c:url value="/resources/css/global.css" />"
@@ -16,40 +17,32 @@
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet"
 	type="text/css">
 
-<script src=<c:url value="/resources/js/timer.js" />
-	type="text/javascript"></script>
-
-
 </head>
-<body onload="countdown();">
-
-	<div id=container>
-		<div id="header">
-			<div id="welcome">
-				<span class="vertical">Welcome</span>
-			</div>
-			<div id="logout">
-				<a href="<c:url value="/j_spring_security_logout" />"><span
-					class="vertical">Logout</span></a>
-			</div>
-			<div id="admin">
-				<c:choose>
-					<c:when test="${isUserAdmin eq true}">
-						<a href="/contactsOrganizer/main/admin"><span class="vertical">Go
-								to admin page:</span></a>
-					</c:when>
-					<c:otherwise>
-						<a href="/contactsOrganizer/main"><span class="vertical">Restricted access</span></a>
-					</c:otherwise>
-				</c:choose>
+<body>
+	<header>
+		<ul>
+			<li>Welcome</li>
+			<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+			<li><a href="#" id="toggle">Add a new contact</a></li>
+			<c:choose>
+				<c:when test="${isUserAdmin eq true}">
+					<li><a href="/contactsOrganizer/main/admin">Go to admin
+							page:</a></li>
+				</c:when>
+			</c:choose>
+		</ul>
+	</header>
 
 
-			</div>
 
-		</div>
-		<div style="clear: both;"></div>
+	<div id="modalBox"
+		<c:choose>
+				<c:when test="${Visible eq true}">style="display:block"</c:when>
+			</c:choose>>
 		<div id="contactForm">
-			<h1>Contacts:</h1>
+			<span id="closeForm">×</span>
+			<h2>Contacts:</h2>
+			<form:errors path="contact.*" class="error" />
 
 			<form action="/contactsOrganizer/main/submitNewContact" method="post">
 				<table>
@@ -84,34 +77,44 @@
 					</tr>
 
 					<tr>
-						<td colspan="2"><input type="submit"
-							value="Add a new contact"></td>
+						<td><input type="submit" value="Add a new contact"></td>
 					</tr>
 				</table>
 			</form>
-
-
-
 		</div>
-		<div id="rightPanel">
-			<div id="clockPanel"></div>
-			<div id="contactsList">
-				<table id="contacts">
-					<c:forEach items="${list}" var="oneContact">
-						<tr>
-							<td>${oneContact.name}</td>
-							<td>${oneContact.surname}</td>
-							<td>${oneContact.company}</td>
-							<td>${oneContact.email}</td>
-							<td>${oneContact.phone}</td>
-							<td><a href="/contactsOrganizer/main/edit/${oneContact.id}">Edit</a></td>
-						</tr>
-
-					</c:forEach>
-				</table>
-			</div>
-		</div>
-
 	</div>
+	<div id="clockPanel"></div>
+
+	<main> <input type="text" id="nameInput" onkeyup="filterNames()"
+		class="searchInput" placeholder="Search for names..."
+		title="Type in a name"> <br />
+	<input type="text" id="companyInput" onkeyup="filterCompanies()"
+		class="searchInput" placeholder="Search for companies..."
+		title="Type in a company">
+
+	<table id="contacts">
+		<tr>
+			<th>Name</th>
+			<th>Company</th>
+			<th>Phone number</th>
+			<th>Edit</th>
+		</tr>
+		<c:forEach items="${list}" var="oneContact">
+			<tr>
+				<td>${oneContact.name} ${oneContact.surname}</td>
+				<td>${oneContact.company}</td>
+				<td>${oneContact.phone}</td>
+				<td class="editCell"><a
+					href="/contactsOrganizer/main/edit/${oneContact.id}">Edit</a></td>
+			</tr>
+
+		</c:forEach>
+	</table>
+	</main>
+
+	<script src=<c:url value="/resources/js/timer.js" />></script>
+	<script src=<c:url value="/resources/js/formToggle.js" />></script>
+	<script src=<c:url value="/resources/js/filterTable.js" />></script>
+
 </body>
 </html>
