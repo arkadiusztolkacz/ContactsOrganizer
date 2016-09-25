@@ -7,9 +7,9 @@ public class Contact implements Comparable<Contact> {
 	private int id;
 
 	@Length(min = 2, max = 30, message = "Please input name with {min} to {max} characters.")
-	private String name;
+	private String firstName;
 	@Length(min = 2, max = 30, message = "Please input surname with {min} to {max} characters.")
-	private String surname;
+	private String lastName;
 	@Length(min = 2, max = 30, message = "Please input company with {min} to {max} characters.")
 	private String company;
 	@Length(min = 2, max = 30, message = "Please input email with {min} to {max} characters.")
@@ -26,19 +26,19 @@ public class Contact implements Comparable<Contact> {
 	}
 
 	public String getName() {
-		return name;
+		return firstName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.firstName = name;
 	}
 
 	public String getSurname() {
-		return surname;
+		return lastName;
 	}
 
 	public void setSurname(String surName) {
-		this.surname = surName;
+		this.lastName = surName;
 	}
 
 	public String getCompany() {
@@ -66,7 +66,7 @@ public class Contact implements Comparable<Contact> {
 	}
 
 	public String toString() {
-		return "Contact [name=" + name + ", surName=" + surname + ", company=" + company + ", email=" + email
+		return "Contact [name=" + firstName + ", surName=" + lastName + ", company=" + company + ", email=" + email
 				+ ", phone=" + phone + "]";
 	}
 

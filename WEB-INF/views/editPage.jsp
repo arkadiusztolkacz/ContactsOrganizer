@@ -38,17 +38,17 @@
 				<table>
 					<tr>
 						<td>Contact's Name:</td>
-						<td><input type="text" name="name" value="${contact.name}"
+						<td><input type="text" name="name" value="${contact.firstName}"
 							placeholder="${originalContact.name}"></td>
-						<td class="errors"><form:errors path="contact.name" /></td>
+						<td class="errors"><form:errors path="contact.firstName" /></td>
 
 					</tr>
 					<tr>
 						<td>Contact's Surname:</td>
 						<td><input type="text" name="surname"
 							value="${contact.surname}"
-							placeholder="${originalContact.surname}"></td>
-						<td class="errors"><form:errors path="contact.surname" /></td>
+							placeholder="${originalContact.lastName}"></td>
+						<td class="errors"><form:errors path="contact.lastName" /></td>
 					</tr>
 					<tr>
 						<td>Contact's Company:</td>
