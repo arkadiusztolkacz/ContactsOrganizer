@@ -64,6 +64,10 @@ section#labels ul {
 	border-right: 2px dotted #DDD;
 }
 
+section#details ul{
+	overflow: auto;
+}
+
 section#details ul li:hover, nav ul li:hover {
 	background-color: #2A8D30;
 }
@@ -103,19 +107,23 @@ section#contactPic, section#contactDelete {
 	display: none;
 }
 
-#contact {
+section#contactForm, section#contactDelete {
+	width: 100%;
+}
+
+div#contactEditForm {
 	background-image: url("img/footer_lodyas.png");
-	padding: 50px;
-	font-size: 16px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	border-radius: 2px;
+	width: 100%;
+	padding: 10px 10px 30px 10px;
+	letter-spacing: 3px;
+	text-align: left;
+	font-weight: bold;
+	border-radius: 5px;
 	box-shadow: 3px 3px 30px 5px rgba(55, 55, 55, 0.9);
 }
 
 input[type=text], input[type=password] {
-	width: 300px;
+	width: 250px;
 	background-color: #efefef;
 	color: #666;
 	border: 2px solid #ddd;
@@ -134,7 +142,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 input[type=submit] {
-	width: 300px;
+	width: 250px;
 	background-color: #36b03c;
 	font-size: 16px;
 	color: white;
@@ -153,17 +161,28 @@ input[type=submit]:hover {
 input[type=submit]:focus {
 	box-shadow: 0px 0px 15px 5px rgba(204, 204, 204, 0.9);
 }
-
-table {
-	text-align: center;
-}
-
-td {
-	min-width: 193px;
+.errors, .error{
+	color: #FF4500;
 }
 
 .errors {
-	color: #FF4500;
+	display: none;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 600px) {
+	.error {
+		display: none;
+	}
+	.errors {
+		display: inline;
+	}
 }
 
 @media screen and (min-width: 750px){
@@ -209,5 +228,11 @@ td {
 	line-height: 250%;
 	float:left;
 	}
+	
+	section#contactForm, section#contactDelete {
+	width: 80%;
+	margin-right: 0;
+	margin-top: 20px;
+    }
 
 }

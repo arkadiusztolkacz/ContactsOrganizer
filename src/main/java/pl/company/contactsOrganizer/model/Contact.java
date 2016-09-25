@@ -6,9 +6,9 @@ public class Contact implements Comparable<Contact> {
 
 	private int id;
 
-	@Length(min = 2, max = 30, message = "Please input name with {min} to {max} characters.")
+	@Length(min = 2, max = 30, message = "Please input first name with {min} to {max} characters.")
 	private String firstName;
-	@Length(min = 2, max = 30, message = "Please input surname with {min} to {max} characters.")
+	@Length(min = 2, max = 30, message = "Please input last name with {min} to {max} characters.")
 	private String lastName;
 	@Length(min = 2, max = 30, message = "Please input company with {min} to {max} characters.")
 	private String company;
@@ -25,20 +25,20 @@ public class Contact implements Comparable<Contact> {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setName(String name) {
-		this.firstName = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getSurname() {
+	public String getLastName() {
 		return lastName;
 	}
 
-	public void setSurname(String surName) {
-		this.lastName = surName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getCompany() {
@@ -65,14 +65,9 @@ public class Contact implements Comparable<Contact> {
 		this.phone = phone;
 	}
 
-	public String toString() {
-		return "Contact [name=" + firstName + ", surName=" + lastName + ", company=" + company + ", email=" + email
-				+ ", phone=" + phone + "]";
-	}
-
 	public void updateContactFields(Contact c) {
-		setName(c.getName());
-		setSurname(c.getSurname());
+		setFirstName(c.getFirstName());
+		setLastName(c.getLastName());
 		setCompany(c.getCompany());
 		setEmail(c.getEmail());
 		setPhone(c.getPhone());

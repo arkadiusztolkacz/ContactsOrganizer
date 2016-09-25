@@ -39,8 +39,8 @@ public class ContactsDAO {
 			public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Contact c = new Contact();
 				c.setId(rs.getInt(columnNames[0]));
-				c.setName(rs.getString(columnNames[1]));
-				c.setSurname(rs.getString(columnNames[2]));
+				c.setFirstName(rs.getString(columnNames[1]));
+				c.setLastName(rs.getString(columnNames[2]));
 				c.setCompany(rs.getString(columnNames[3]));
 				c.setEmail(rs.getString(columnNames[4]));
 				c.setPhone(rs.getString(columnNames[5]));
@@ -52,12 +52,12 @@ public class ContactsDAO {
 	}
 
 	public void addNewContact(Contact contact) {
-		jdbcTemplate.update(insertIntoContacts, contact.getName(), contact.getSurname(), contact.getCompany(),
+		jdbcTemplate.update(insertIntoContacts, contact.getFirstName(), contact.getLastName(), contact.getCompany(),
 				contact.getEmail(), contact.getPhone());
 	}
 
 	public void updateContact(Contact contact) {
-		jdbcTemplate.update(updateContacts, contact.getName(), contact.getSurname(), contact.getCompany(),
+		jdbcTemplate.update(updateContacts, contact.getFirstName(), contact.getLastName(), contact.getCompany(),
 				contact.getEmail(), contact.getPhone(), contact.getId());
 	}
 

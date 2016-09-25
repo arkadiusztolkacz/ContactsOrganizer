@@ -47,15 +47,15 @@
 			<form action="/contactsOrganizer/main/submitNewContact" method="post">
 				<table>
 					<tr>
-						<td><input type="text" name="name" placeholder="name"
-							onfocus="this.placeholder=''" onblur="this.placeholder='name'"></td>
-						<td class="errors"><form:errors path="contact.name" /></td>
+						<td><input type="text" name="firstName" placeholder="first name"
+							onfocus="this.placeholder=''" onblur="this.placeholder='first name'"></td>
+						<td class="errors"><form:errors path="contact.firstName" /></td>
 					</tr>
 
 					<tr>
-						<td><input type="text" name="surname" placeholder="surname"
-							onfocus="this.placeholder=''" onblur="this.placeholder='surname'"></td>
-						<td class="errors"><form:errors path="contact.surname" /></td>
+						<td><input type="text" name="lastName" placeholder="last name"
+							onfocus="this.placeholder=''" onblur="this.placeholder='last name'"></td>
+						<td class="errors"><form:errors path="contact.lastName" /></td>
 					</tr>
 
 					<tr>
@@ -103,7 +103,7 @@
 		</tr>
 		<c:forEach items="${list}" var="oneContact">
 			<tr>
-				<td>${oneContact.name} ${oneContact.surname}</td>
+				<td>${oneContact.firstName} ${oneContact.lastName}</td>
 				<td>${oneContact.company}</td>
 				<td>${oneContact.phone}</td>
 				<td class="editCell"><a
