@@ -7,6 +7,4 @@ To open initial page, for example after running application with Tomcat server, 
 
 It's still under development.
 TODO List:
-- add responsive functionality to every page.
-- add more profesional interface to edit page with javascript.
 - finish an interface which allows to add profile picture to every contact.
