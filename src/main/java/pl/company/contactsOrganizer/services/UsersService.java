@@ -5,11 +5,11 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import pl.company.contactsOrganizer.model.User;
 
-@Component
+@Service
 public class UsersService {
 
 	private User loggedUser;
