@@ -13,10 +13,10 @@
 			authentication-failure-url="/loginfailed" />
 		<logout logout-success-url="/logout" />
 	</http>
-	
+
 	<authentication-manager>
 		<authentication-provider>
-		<password-encoder hash="sha-256"/>
+			<password-encoder hash="sha-256" />
 			<jdbc-user-service
 				authorities-by-username-query="SELECT us.username, ur.authority FROM users us JOIN user_roles ur ON(us.user_role_id = ur.user_role_id) WHERE us.username=?"
 				users-by-username-query="SELECT username, password, enabled FROM users WHERE username=?"
