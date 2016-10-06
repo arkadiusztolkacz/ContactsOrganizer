@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 		<h1>This is admin page</h1>
 		<h2>Welcome ${adminName}</h2>
 		<p>
-			<a href="/contactsOrganizer/main/admin/goBack">Go back to main page</a>
+			<a href='<spring:url value="/main" />'>Go back to main page</a>
 		</p>
 		<h3>List of authorized users:</h3>
 		<div id=tableDiv>

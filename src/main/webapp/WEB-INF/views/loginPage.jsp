@@ -2,6 +2,7 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
 	</form>
 
 	<span id="error"> <c:if test="${error eq true}">
-		Your username or password was incorrect
+		<spring:message code="AuthenticationProvider.badCredentials"/>
 			</c:if>
 	</span> </main>
 </body>

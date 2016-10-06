@@ -3,9 +3,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
 
 <meta charset="UTF-8">
@@ -26,7 +27,7 @@
 			<li><a href="#" id="toggle">Add a new contact</a></li>
 			<c:choose>
 				<c:when test="${isUserAdmin eq true}">
-					<li><a href="/contactsOrganizer/main/admin">Admin
+					<li><a href='<spring:url value="/main/admin" />'>Admin
 							page:</a></li>
 				</c:when>
 			</c:choose>
@@ -44,7 +45,7 @@
 			<h2>New contact</h2>
 			<form:errors path="contact.*" class="error" />
 
-			<form action="/contactsOrganizer/main/submitNewContact" method="post">
+			<form action='<spring:url value="/main/submitNewContact" />' method="post">
 				<table>
 					<tr>
 						<td><input type="text" name="firstName" placeholder="first name"
@@ -107,7 +108,7 @@
 				<td>${oneContact.company}</td>
 				<td>${oneContact.phone}</td>
 				<td class="editCell"><a
-					href="/contactsOrganizer/main/edit/${oneContact.id}">.</a></td>
+					href='<spring:url value="/main/contact?id=${oneContact.id}" />'>.</a></td>
 			</tr>
 
 		</c:forEach>

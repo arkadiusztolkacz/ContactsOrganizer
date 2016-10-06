@@ -176,6 +176,14 @@ input[type=submit]:focus {
     margin-bottom: 15px;
 }
 
+input.btn-danger {
+	background-color: #990000;
+}
+
+input.btn-danger:hover {
+	background-color: #cc0000;
+}
+
 @media screen and (min-width: 600px) {
 	.error {
 		display: none;
