@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.company.contacts.domain.Contact;
-import pl.company.contacts.services.impl.ContactsServiceImpl;
+import pl.company.contacts.services.ContactsService;
 
 @Controller
 @RequestMapping(value="/main/contact")
 public class ContactController {
 
 	@Autowired
-	private ContactsServiceImpl cService;
+	private ContactsService cService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String editContact(@RequestParam("id") int id, Model model) {

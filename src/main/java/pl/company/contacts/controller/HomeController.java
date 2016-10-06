@@ -10,25 +10,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import pl.company.contacts.domain.Contact;
 import pl.company.contacts.domain.User;
-import pl.company.contacts.services.impl.ContactsServiceImpl;
-import pl.company.contacts.services.impl.UsersServiceImpl;
+import pl.company.contacts.services.ContactsService;
+import pl.company.contacts.services.UsersService;
 
 @Controller
 @RequestMapping(value="/main")
 public class HomeController {
 
 	@Autowired
-	private ContactsServiceImpl cService;
+	private ContactsService cService;
 	@Autowired
-	UsersServiceImpl uService;
+	UsersService uService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showMainPage(Model model, Principal principal) {

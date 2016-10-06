@@ -5,15 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import pl.company.contacts.services.impl.UsersServiceImpl;
+import pl.company.contacts.services.UsersService;
 
 @Controller
 public class LoginController {
 
 	@Autowired
-	private UsersServiceImpl uService;
+	private UsersService uService;
 
 	@RequestMapping(value = "/loginfailed", method = RequestMethod.GET)
 	public String loginerror(Model model) {
