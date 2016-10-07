@@ -1,22 +1,14 @@
 package pl.company.contacts.services.impl;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.imageio.ImageIO;
 
-import org.apache.commons.fileupload.disk.DiskFileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import pl.company.contacts.domain.Contact;
 import pl.company.contacts.domain.repository.ContactsRepository;
@@ -82,32 +74,11 @@ public class ContactsServiceImpl implements ContactsService {
 		File destFile = new File(rootDirectory + "resources\\images\\" + contact.getId() + ".png");
 
 		try {
-			if (profilePic != null) {
-				if (profilePic.isEmpty()) {
-					//BufferedImage defaultPic = ImageIO.read(new File(rootDirectory + "resources\\images\\default\\profile_default.png"));
-					File defaultPicFile = new File(rootDirectory + "resources\\images\\default\\profile_default.png");
-					//new DiskFileItem("profilePic", "image/png", false, fileName, sizeThreshold, repository)
-					
-					DiskFileItem fileItem = (DiskFileItem) new DiskFileItemFactory().createItem(contact.getId() + ".png", "img/png", true, defaultPicFile.getName());
-			        InputStream input =  new FileInputStream(defaultPicFile);
-			        OutputStream os = fileItem.getOutputStream();
-			        int ret = input.read();
-			        while ( ret != -1 )
-			        {
-			            os.write(ret);
-			            ret = input.read();
-			        }
-			        os.flush();
-			        input.close();
-					MultipartFile defaultProfilePic = new CommonsMultipartFile(fileItem);
-					defaultProfilePic.transferTo(destFile);
-					
-					//ImageIO.write(defaultPic, "png", destFile);
-				} else {
-					profilePic.transferTo(destFile);
-				}
+			if (profilePic != null && !profilePic.isEmpty()) {
+				profilePic.transferTo(destFile);
 			}
 		} catch (Exception e) {
+
 		}
 
 	}

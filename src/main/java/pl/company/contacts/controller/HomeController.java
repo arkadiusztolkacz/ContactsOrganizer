@@ -3,6 +3,7 @@ package pl.company.contacts.controller;
 import java.security.Principal;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +44,12 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/submitNewContact", method = RequestMethod.POST)
-	public String submitNew(@Valid @ModelAttribute("contact") Contact contact, BindingResult result, Model model) {
+	public String submitNew(@Valid @ModelAttribute("contact") Contact contact, BindingResult result, HttpServletRequest request, Model model) {
 
 		if (!result.hasErrors()) {
+			String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 			cService.addNewContact(contact);
+			cService.attachContactPic(contact, rootDirectory);
 			return "redirect:/main";
 		} else {
 			List<Contact> contactsList = cService.findCurrentContacts();

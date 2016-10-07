@@ -59,13 +59,7 @@ public class ContactController {
 	public String uploadPic(@ModelAttribute("contact") Contact contact, HttpServletRequest request, Model model){
 		
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-//		System.out.println(rootDirectory);
-//		String substring = rootDirectory.substring(0, rootDirectory.indexOf("."));
-//		System.out.println(substring);
-//		String substring2 = rootDirectory.substring(rootDirectory.indexOf("Contacts"));
-//		String substring3 = substring + substring2;
-//		System.out.println(substring3);
-		cService.attachContactPic(contact, rootDirectory);		
+		cService.attachContactPic(contact, rootDirectory);
 		return "redirect:/main/contact?id=" + contact.getId();
 	}
 }

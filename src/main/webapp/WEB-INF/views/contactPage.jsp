@@ -28,8 +28,8 @@
 	</header>
 
 	<figure>
-		<img id="profilePic" src='<c:url value="/resources/images/${originalContact.id}.png"/>' alt="profile" />
-		<figcaption>profile picture</figcaption>
+		<img id="profilePic" src='<c:url value="/resources/images/${originalContact.id}.png"/>' alt="Pic" />
+		<figcaption>${originalContact.firstName} ${originalContact.lastName}</figcaption>
 	</figure>
 
 	<section id="labels" class="contactInfo">
@@ -111,6 +111,7 @@
 		    <input name="profilePic" type="file" />
 		    <input type="submit" value="Upload">
 		</form>
+		<h3>If the picture does not load immediately, try refreshing the page.</h3>
 	</section>
 	<section id="contactDelete" class="tabContent">
 		<div class="alert">

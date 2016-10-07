@@ -45,7 +45,7 @@
 			<h2>New contact</h2>
 			<form:errors path="contact.*" class="error" />
 
-			<form action='<spring:url value="/main/submitNewContact" />' method="post">
+			<form action='<spring:url value="/main/submitNewContact" />' method="post" enctype="multipart/form-data">
 				<table>
 					<tr>
 						<td><input type="text" name="firstName" placeholder="first name"
@@ -75,6 +75,10 @@
 						<td><input type="text" name="phone" placeholder="phone"
 							onfocus="this.placeholder=''" onblur="this.placeholder='phone'"></td>
 						<td class="errors"><form:errors path="contact.phone" /></td>
+					</tr>
+					
+					<tr>
+						<td><input type="file" name="profilePic"></td>
 					</tr>
 
 					<tr>

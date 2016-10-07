@@ -27,14 +27,17 @@ header ul li a:hover {
 }
 
 figure {
-	max-width: 100%;
 	text-align: center;
 	color: #000;
 }
 
 figure img#profilePic {
-	max-width: 200px;
-	margin: auto;
+	height: 200px;
+	max-width: 250px;
+	font-size: 8em;
+	color: transparent;
+	background: url("img/profile_default.png") no-repeat center;
+	background-size: contain;
 }
 
 section.contactInfo {
@@ -96,8 +99,17 @@ section.tabContent {
 	text-align: center;
 }
 
-section.tabContent h1 {
+section#contactPic {
 	color: #000;
+}
+
+input[type=file]{
+	width: 300px;
+	background-color: #05E;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	font-size: 0.8em;
+	padding: 10px;
 }
 
 section#contactPic, section#contactDelete {
@@ -127,7 +139,6 @@ input[type=text], input[type=password] {
 	border-radius: 5px;
 	font-size: 16px;
 	padding: 10px;
-	box-sizing: border-box;
 	margin-top: 10px;
 }
 

@@ -83,7 +83,7 @@ span#closeForm:hover, span#closeForm:focus {
 	cursor: pointer;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=file] {
 	width: 250px;
 	background-color: #efefef;
 	color: #666;
@@ -201,8 +201,11 @@ table#contacts tr td a {
 }
 
 table#contacts tr td a img {
-	max-height: 30px;
+	height: 30px;
 	max-width: 40px;
+	color: transparent;
+	background: url("img/profile_default.png") no-repeat center;
+	background-size: contain;
 }
 
 table#contacts th {
