@@ -198,14 +198,11 @@ table#contacts tr:nth-child(even){background-color: #f2f2f2;}
 table#contacts tr td a {
 	display: inline-block;
 	width: 100%;
-	color: transparent;
-	background: url("img/profile_default.png") no-repeat center;
-	background-size: contain;
 }
 
-table#contacts tr td a:hover {
-	background: url("img/profile_default_hover.png") no-repeat center;
-	background-size: contain;
+table#contacts tr td a img {
+	max-height: 30px;
+	max-width: 40px;
 }
 
 table#contacts th {

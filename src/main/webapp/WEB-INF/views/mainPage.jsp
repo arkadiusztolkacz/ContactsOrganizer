@@ -108,7 +108,9 @@
 				<td>${oneContact.company}</td>
 				<td>${oneContact.phone}</td>
 				<td class="editCell"><a
-					href='<spring:url value="/main/contact?id=${oneContact.id}" />'>.</a></td>
+					href='<spring:url value="/main/contact?id=${oneContact.id}" />'>
+					<img src='<c:url value="/resources/images/${oneContact.id}.png"/>' alt="profile" />
+					</a></td>
 			</tr>
 
 		</c:forEach>

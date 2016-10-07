@@ -32,12 +32,9 @@ figure {
 	color: #000;
 }
 
-figure div#profilePic {
-	width: 150px;
-	height: 150px;
+figure img#profilePic {
+	max-width: 200px;
 	margin: auto;
-	background: url("img/profile_default.png") no-repeat center;
-	background-size: contain;
 }
 
 section.contactInfo {
@@ -209,11 +206,6 @@ input.btn-danger:hover {
 	max-width: 50%;
 	float: right;
 	margin-top: 15px;
-	}
-	
-	figure div#profilePic {
-	width: 200px;
-	height: 200px;
 	}
 	
 	section.contactInfo {

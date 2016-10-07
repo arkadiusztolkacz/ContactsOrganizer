@@ -1,11 +1,11 @@
 package pl.company.contacts.domain;
 
 import org.hibernate.validator.constraints.Length;
+import org.springframework.web.multipart.MultipartFile;
 
 public class Contact implements Comparable<Contact> {
 
 	private int id;
-
 	@Length(min = 2, max = 30, message = "Please input first name with {min} to {max} characters.")
 	private String firstName;
 	@Length(min = 2, max = 30, message = "Please input last name with {min} to {max} characters.")
@@ -16,6 +16,7 @@ public class Contact implements Comparable<Contact> {
 	private String email;
 	@Length(max = 9, message = "Please input valid phone number.")
 	private String phone;
+	private MultipartFile profilePic;
 
 	public int getId() {
 		return id;
@@ -63,6 +64,14 @@ public class Contact implements Comparable<Contact> {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public MultipartFile getProfilePic() {
+		return profilePic;
+	}
+
+	public void setProfilePic(MultipartFile profilePic) {
+		this.profilePic = profilePic;
 	}
 
 	public void updateContactFields(Contact c) {

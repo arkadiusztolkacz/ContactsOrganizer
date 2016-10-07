@@ -28,7 +28,7 @@
 	</header>
 
 	<figure>
-		<div id="profilePic"></div>
+		<img id="profilePic" src='<c:url value="/resources/images/${originalContact.id}.png"/>' alt="profile" />
 		<figcaption>profile picture</figcaption>
 	</figure>
 
@@ -105,7 +105,12 @@
 		</div>
 	</section>
 	<section id="contactPic" class="tabContent">
-		<h1>Under construction</h1>
+		<h2>Choose an image from your files.</h2>
+		<form action='<spring:url value="/main/contact/uploadPic" />' method="post" enctype="multipart/form-data">
+		    <input type="hidden" name="id" value="${contact.id}">
+		    <input name="profilePic" type="file" />
+		    <input type="submit" value="Upload">
+		</form>
 	</section>
 	<section id="contactDelete" class="tabContent">
 		<div class="alert">

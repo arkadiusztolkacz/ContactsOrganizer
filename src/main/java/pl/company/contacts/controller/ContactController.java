@@ -1,5 +1,6 @@
 package pl.company.contacts.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,19 @@ public class ContactController {
 			model.addAttribute("originalContact", originalContact);
 			return "contactPage";
 		}
+	}
+	
+	@RequestMapping(value="/uploadPic", method = RequestMethod.POST)
+	public String uploadPic(@ModelAttribute("contact") Contact contact, HttpServletRequest request, Model model){
+		
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+//		System.out.println(rootDirectory);
+//		String substring = rootDirectory.substring(0, rootDirectory.indexOf("."));
+//		System.out.println(substring);
+//		String substring2 = rootDirectory.substring(rootDirectory.indexOf("Contacts"));
+//		String substring3 = substring + substring2;
+//		System.out.println(substring3);
+		cService.attachContactPic(contact, rootDirectory);		
+		return "redirect:/main/contact?id=" + contact.getId();
 	}
 }

@@ -10,6 +10,7 @@
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<context:component-scan base-package="pl.company.contacts" />
 	<context:property-placeholder location="classpath:database.properties" />
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
@@ -27,5 +28,10 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages"></property>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10240000"></property>
 	</bean>
 </beans>

@@ -11,4 +11,5 @@ public interface ContactsService {
 	public void addNewContact(Contact contact);
 	public void updateContact(Contact contact);
 	public void removeContact(Contact contact);
+	public void attachContactPic(Contact contact, String rootDirectory);
 }
